@@ -1,0 +1,41 @@
+<main>
+  <!--  Avec un objet passé pour le style et une propriété en dur pour le name-->
+  <!-- <app-button [customStyle]="greenCustomStyle" [nameGiven]="name1" (dataEmitFromChild)="dataReceiveFromChild($event)"></app-button>
+  <app-button [customStyle]="redCustomStyle" [nameGiven]="name2" (dataEmitFromChild)="dataReceiveFromChild($event)"></app-button>
+  <app-button [customStyle]="orangeCustomStyle" [nameGiven]="name3" (dataEmitFromChild)="dataReceiveFromChild($event)"></app-button>
+  <app-button [customStyle]="purpleCustomStyle" [nameGiven]="name4" (dataEmitFromChild)="dataReceiveFromChild($event)"></app-button>
+  <app-button [customStyle]="transparentCustomStyle" [nameGiven]="name5" (dataEmitFromChild)="dataReceiveFromChild($event)"></app-button> -->
+
+  <!--  Avec des styles pour chaque propriété  -->
+  <app-button 
+    [givenColor]="redColor" [borderGiven]="borderRadius" [nameGiven]="name1" [fontColor]="fontColorWhite" 
+    (dataEmitFromChild)="dataReceiveFromChild($event)">
+  </app-button>
+  <app-button 
+    [givenColor]="orangeColor" [borderGiven]="borderRadius" [nameGiven]="name2" [fontColor]="fontColorWhite" 
+    (dataEmitFromChild)="dataReceiveFromChild($event)">
+  </app-button>
+  <app-button 
+    [givenColor]="transparentColor" [borderGiven]="borderRadius" [nameGiven]="name3" 
+    (dataEmitFromChild)="dataReceiveFromChild($event)">
+  </app-button>
+  <app-button 
+    [givenColor]="purpleColor" [borderGiven]="borderRadius" [nameGiven]="name4" [fontColor]="fontColorWhite" 
+    (dataEmitFromChild)="dataReceiveFromChild($event)">
+  </app-button>
+  <app-button 
+    [givenColor]="greenColor" [borderGiven]="borderRadius" [nameGiven]="name5" [fontColor]="fontColorWhite"
+    (dataEmitFromChild)="dataReceiveFromChild($event)">
+  </app-button>
+
+  <!-- Avec un tableau d'objet de style -->
+  <!-- @for (style of buttonStyles; track $index) {
+    <app-button [style]="style" (dataEmitFromChild)="dataReceiveFromChild($event)" [nameGiven]="style.name"></app-button>
+  } -->
+
+  @if(this.popUp){
+    <div class="popUp" [ngClass]="{'hidden' : hiddenPopup}">
+      <span>{{dataFromChild}}</span>
+    </div>
+  }
+</main>
